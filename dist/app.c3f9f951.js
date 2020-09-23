@@ -117,79 +117,78 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/app.js":[function(require,module,exports) {
+//Set Date
+var date = document.getElementById("date");
+date.innerHTML = new Date().getFullYear(); //Close Links
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
+var navToggle = document.querySelector(".nav-toggle");
+var linksContainer = document.querySelector(".links-container");
+var links = document.querySelector(".links");
+navToggle.addEventListener("click", function () {
+  //linksContainer.classList.toggle("show-links");
+  var containerHeight = linksContainer.getBoundingClientRect().height;
+  var linksHeight = links.getBoundingClientRect().height;
+  console.log(linksHeight);
+
+  if (containerHeight === 0) {
+    linksContainer.style.height = "".concat(linksHeight, "px");
+  } else {
+    linksContainer.style.height = 0;
+  }
+}); //Fixed Navbar
+
+var navbar = document.getElementById("nav");
+var topLink = document.querySelector(".top-link");
+window.addEventListener("scroll", function () {
+  var scrollHeight = window.pageYOffset; //console.log(scrollHeight);
+
+  var navHeight = navbar.getBoundingClientRect().height;
+
+  if (scrollHeight > navHeight) {
+    navbar.classList.add("fixed-nav");
+  } else {
+    navbar.classList.remove("fixed-nav");
   }
 
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
+  if (scrollHeight > 500) {
+    topLink.classList.add("show-link");
+  } else {
+    topLink.classList.remove("show-link");
   }
+}); //Smooth scrolling
+// select links
 
-  return '/';
-}
+var scrolllinks = document.querySelectorAll(".scroll-link");
+scrolllinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault(); //Navigate to specific spot
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
+    var id = e.currentTarget.getAttribute("href").slice(1); //console.log(id);
 
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
+    var element = document.getElementById(id); //Calculate the height
 
-function updateLink(link) {
-  var newLink = link.cloneNode();
+    var navHeight = navbar.getBoundingClientRect().height;
+    var containerHeight = linksContainer.getBoundingClientRect().height;
+    var fixedNav = navbar.classList.contains("fixed-nav");
+    var position = element.offsetTop - navHeight; //console.log(position);
 
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
+    if (!fixedNav) {
+      position = position - navHeight;
     }
 
-    cssTimeout = null;
-  }, 50);
-}
+    if (navHeight > 82) {
+      position = position + containerHeight;
+    }
 
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style/style.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\assets\\hero-bcg.jpeg":[["hero-bcg.4b986b28.jpeg","assets/hero-bcg.jpeg"],"assets/hero-bcg.jpeg"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    window.scrollTo({
+      left: 0,
+      top: position
+    });
+    linksContainer.style.height = 0;
+  });
+});
+},{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +392,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.e0c02e61.js.map
+},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/app.js"], null)
+//# sourceMappingURL=/app.c3f9f951.js.map

@@ -117,102 +117,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/app.js":[function(require,module,exports) {
-"use strict";
+})({"js/index.js":[function(require,module,exports) {
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var App = function App() {
-  //Set Date
-  var date = document.getElementById("date");
-  date.innerHTML = new Date().getFullYear(); //Close Links
-
-  var navToggle = document.querySelector(".nav-toggle");
-  var linksContainer = document.querySelector(".links-container");
-  var links = document.querySelector(".links");
-  navToggle.addEventListener("click", function () {
-    //linksContainer.classList.toggle("show-links");
-    var containerHeight = linksContainer.getBoundingClientRect().height;
-    var linksHeight = links.getBoundingClientRect().height;
-    console.log(linksHeight);
-
-    if (containerHeight === 0) {
-      linksContainer.style.height = "".concat(linksHeight, "px");
-    } else {
-      linksContainer.style.height = 0;
-    }
-  }); //Fixed Navbar
-
-  var navbar = document.getElementById("nav");
-  var topLink = document.querySelector(".top-link");
-  window.addEventListener("scroll", function () {
-    var scrollHeight = window.pageYOffset;
-    console.log(scrollHeight);
-    var navHeight = navbar.getBoundingClientRect().height;
-
-    if (scrollHeight > navHeight) {
-      navbar.classList.add("fixed-nav");
-    } else {
-      navbar.classList.remove("fixed-nav");
-    }
-
-    if (scrollHeight > 500) {
-      topLink.classList.add("show-link");
-    } else {
-      topLink.classList.remove("show-link");
-    }
-  }); //Smooth scrolling
-  // select links
-
-  var scrolllinks = document.querySelectorAll(".scroll-link");
-  scrolllinks.forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      e.preventDefault(); //Navigate to specific spot
-
-      var id = e.currentTarget.getAttribute("href").slice(1); //console.log(id);
-
-      var element = document.getElementById(id); //Calculate the height
-
-      var navHeight = navbar.getBoundingClientRect().height;
-      var containerHeight = linksContainer.getBoundingClientRect().height;
-      var fixedNav = navbar.classList.contains("fixed-nav");
-      var position = element.offsetTop - navHeight; //console.log(position);
-
-      if (!fixedNav) {
-        position = position - navHeight;
-      }
-
-      if (navHeight > 82) {
-        position = position + containerHeight;
-      }
-
-      window.scrollTo({
-        left: 0,
-        top: position
-      });
-      linksContainer.style.height = 0;
-    });
-  });
-};
-
-var _default = App;
-exports.default = _default;
-},{}],"js/index.js":[function(require,module,exports) {
-"use strict";
-
-var _app = _interopRequireDefault(require("./app"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var run = function run() {
-  console.log("I am running");
-};
-
-run();
-},{"./app":"js/app.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -240,7 +147,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56783" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64815" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
