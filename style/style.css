@@ -81,8 +81,8 @@ p {
     line-height: 1;
   }
 }
-/*  global classes */
 
+/*  global classes */
 .btn {
   text-transform: uppercase;
   background: transparent;
@@ -145,6 +145,7 @@ nav {
   width: 100%;
   background: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 .fixed-nav .links a {
   color: hsl(209, 61%, 16%);
@@ -236,6 +237,7 @@ nav {
     color: #fff;
   }
 }
+
 /* hero */
 header {
   min-height: 100vh;
@@ -246,6 +248,26 @@ header {
   display: grid;
   place-items: center;
   text-align: center;
+}
+.profile {
+  position: relative;
+  left: 10%;
+  width: 30%;
+  height: 200px;
+  letter-spacing: 0.25rem;
+}
+.profile img {
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  margin: 20px 10px 10px 10px;
+}
+.profile-text {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 24px;
 }
 .container h1 {
   color: #fff;
@@ -271,6 +293,7 @@ header {
   color: hsla(182, 63%, 54%);
 }
 #about,
+#skills,
 #services,
 #tours {
   height: 80vh;
