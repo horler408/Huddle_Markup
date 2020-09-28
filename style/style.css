@@ -121,6 +121,7 @@ p {
   margin: 0 auto;
   max-width: 1170px;
 }
+
 @media screen and (min-width: 992px) {
   .section-center {
     width: 95vw;
@@ -251,9 +252,9 @@ header {
 }
 .profile {
   position: relative;
-  left: 10%;
-  width: 30%;
-  height: 200px;
+  width: 80%;
+  height: 350px;
+  margin: 0 auto;
   letter-spacing: 0.25rem;
 }
 .profile img {
@@ -267,8 +268,9 @@ header {
   text-align: center;
   color: #ffffff;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 22px;
 }
+
 .container h1 {
   color: #fff;
   text-transform: uppercase;
@@ -282,6 +284,19 @@ header {
 @media screen and (min-width: 768px) {
   .container p {
     max-width: 40rem;
+  }
+  .profile {
+    margin: 0 0 0 10%;
+    width: 30%;
+    height: 350px;
+  }
+  .profile img {
+    width: 220px;
+    height: 220px;
+  }
+  .profile-text {
+    width: 100%;
+    font-size: 24px;
   }
 }
 /* sections and title */
