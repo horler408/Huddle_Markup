@@ -12,8 +12,15 @@ html {
   box-sizing: border-box;
 }
 
+:root {
+  --ff-primary: "Source Sans Pro", sans-serif;
+  --ff-secondary: "Source Code Pro", monospace;
+  --shadow: 0.25em 0.25em 0.75em rgba(255, 255, 255, 0.9),
+    0.125em 0.125em 0.25em rgba(255, 255, 255, 0.7);
+}
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--ff-primary);
   background: hsl(210, 36%, 96%);
   color: hsl(209, 61%, 16%);
   line-height: 1.5;
@@ -58,6 +65,15 @@ p {
   margin-bottom: 1.25rem;
   color: hsl(210, 22%, 49%);
 }
+
+/* About Section */
+.about {
+  width: 90%;
+  margin: 0 auto;
+  justify-content: left;
+  font-size: 0.8rem;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -237,6 +253,12 @@ nav {
   .links a:hover {
     color: #fff;
   }
+
+  /* About section */
+  .about {
+    width: 80%;
+    font-size: 1.5rem;
+  }
 }
 
 /* hero */
@@ -255,20 +277,33 @@ header {
   width: 80%;
   height: 350px;
   margin: 0 auto;
-  letter-spacing: 0.25rem;
 }
 .profile img {
   border-radius: 50%;
+  margin: 10px auto;
   width: 220px;
   height: 220px;
-  margin: 20px 10px 10px 10px;
 }
+
 .profile-text {
   width: 100%;
+}
+
+.title-1 {
   text-align: center;
   color: #ffffff;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 24px;
+}
+
+.title-2 {
+  font-family: var(--ff-secondary);
+  background: #ffffff;
+  width: 100%;
+  padding: 5px 20px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 18px;
 }
 
 .container h1 {
@@ -281,22 +316,58 @@ header {
   margin: 0 auto;
   margin-bottom: 1.25rem;
 }
+.social-icons {
+  display: none;
+}
 @media screen and (min-width: 768px) {
   .container p {
     max-width: 40rem;
   }
   .profile {
+    position: relative;
     margin: 0 0 0 10%;
-    width: 30%;
+    width: 90%;
     height: 350px;
   }
   .profile img {
-    width: 220px;
-    height: 220px;
+    position: absolute;
+    left: 10%;
+    transform: translateX(-10%);
+    width: 300px;
+    height: 300px;
   }
   .profile-text {
-    width: 100%;
+    position: absolute;
+    width: 60%;
     font-size: 24px;
+    left: 27%;
+    top: 20%;
+    margin: 30px;
+  }
+
+  .title-1 {
+    font-size: 3.5rem;
+  }
+
+  .title-2 {
+    margin: 0 auto;
+    width: 60%;
+    border-radius: 10px;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .social-icons a {
+    margin: 0 0.5rem;
+    color: #ffffff;
+    transition: all 0.3s linear;
+  }
+
+  .social-icons a:hover {
+    color: hsl(205, 90%, 76%);
   }
 }
 /* sections and title */
@@ -313,7 +384,8 @@ header {
 #tours {
   height: 80vh;
 }
-#services {
+#services,
+#about {
   background: #fff;
 }
 footer {
