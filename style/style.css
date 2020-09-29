@@ -71,7 +71,10 @@ p {
   width: 90%;
   margin: 0 auto;
   justify-content: left;
-  font-size: 0.8rem;
+  font-size: 1rem;
+}
+.about p {
+  margin-bottom: 0.3rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -359,6 +362,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
   }
   .social-icons a {
     margin: 0 0.5rem;
@@ -379,13 +383,11 @@ header {
   color: hsla(182, 63%, 54%);
 }
 #about,
-#skills,
 #services,
 #tours {
   height: 80vh;
 }
-#services,
-#about {
+#services {
   background: #fff;
 }
 footer {
