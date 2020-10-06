@@ -338,6 +338,7 @@ header {
     width: 90%;
     height: 350px;
   }
+
   .profile img {
     position: absolute;
     left: 10%;
@@ -347,9 +348,9 @@ header {
   }
   .profile-text {
     position: absolute;
-    width: 60%;
+    width: 80%;
     font-size: 24px;
-    left: 27%;
+    left: 20%;
     top: 20%;
     margin: 30px;
   }
@@ -407,7 +408,7 @@ footer p {
   color: #fff;
   text-align: center;
   text-transform: capitalize;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.15rem;
   margin-bottom: 0;
 }
 
@@ -469,23 +470,7 @@ footer p {
 .description {
   font-size: 1rem;
 }
-/* .person-img {
-  border-radius: 50%;
-  width: 6rem;
-  height: 6rem;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-} */
-/* .slide:nth-child(1) h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-/* .slide:nth-child(3) {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("./img-2.jpeg") center/cover no-repeat;
-} */
+
 .btn-container {
   display: flex;
   justify-content: center;
@@ -507,6 +492,25 @@ footer p {
 .prevBtn:hover,
 .nextBtn:hover {
   color: hsl(209, 34%, 30%);
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  transition: all 0.3s linear;
+}
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
 }
 
 @media only screen and (min-width: 576px) {
