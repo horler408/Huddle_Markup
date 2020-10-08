@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -15,8 +17,8 @@ html {
 :root {
   --ff-primary: "Source Sans Pro", sans-serif;
   --ff-secondary: "Source Code Pro", monospace;
-  --shadow: 0.25em 0.25em 0.75em rgba(170, 100, 100, 0.9),
-    0.125em 0.125em 0.25em rgba(255, 255, 255, 0.7);
+  --shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.5),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.7);
 }
 
 body {
@@ -77,7 +79,51 @@ p {
   margin-bottom: 0.3rem;
 }
 
-/* Service Section */
+/* Skills Section */
+.intro {
+  text-align: center;
+  margin-bottom: 0.3rem;
+  /* color: hsl(209, 61%, 16%); */
+}
+
+.skill__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.card-items {
+  border: 10px;
+  box-shadow: 0px 5px 20px rgb(71, 71, 71);
+  margin: 10px;
+  padding: 5px 10px;
+  flex-direction: column;
+  justify-content: space-around;
+  background: white;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  height: 40vh;
+  transition: all 0.25s ease-in-out;
+}
+.card-items h3 {
+  font-size: 28px;
+}
+.list {
+  font-size: 20px;
+  margin: 2px;
+}
+
+.card-items:hover {
+  transform: scale(1.05);
+}
+
+.contact a {
+  color: white;
+}
 
 @media screen and (min-width: 800px) {
   h1 {
@@ -134,7 +180,7 @@ p {
 }
 /* section */
 .section {
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .section-center {
@@ -281,6 +327,8 @@ header {
   place-items: center;
   text-align: center;
 }
+
+/* Profile Mobile */
 .profile {
   position: relative;
   width: 80%;
@@ -300,9 +348,9 @@ header {
 
 .title-1 {
   text-align: center;
-  color: #ffffff;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 3.5rem;
+  font-family: "Cookie", cursive;
 }
 
 .title-2 {
@@ -350,18 +398,18 @@ header {
     position: absolute;
     width: 80%;
     font-size: 24px;
-    left: 20%;
+    left: 12%;
     top: 20%;
     margin: 30px;
   }
 
   .title-1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
   }
 
   .title-2 {
     margin: 0 auto;
-    width: 60%;
+    width: 40%;
     border-radius: 10px;
   }
 
@@ -384,6 +432,13 @@ header {
   .carousel {
     height: 55vh;
   }
+  /* Services */
+  .skill__cards {
+    width: 80%;
+  }
+  .card-items {
+    width: 30%;
+  }
 }
 /* sections and title */
 .title h2 {
@@ -393,13 +448,14 @@ header {
 .title span {
   color: hsla(182, 63%, 54%);
 }
-#about,
-#services {
-  height: 90vh;
+#about {
+  height: 85vh;
 }
-#services {
+#skills {
   background: #fff;
+  /* color: hsl(209, 61%, 16%); */
 }
+
 footer {
   background: hsl(209, 61%, 16%);
   padding: 5rem 1rem;
@@ -451,6 +507,7 @@ footer p {
   position: relative;
   overflow: hidden;
   margin-top: 1rem;
+  box-shadow: var(--shadow);
 }
 .slide {
   position: absolute;
@@ -518,9 +575,14 @@ footer p {
     height: 55vh;
   }
   #about,
-  #services,
   #projects {
     height: 80vh;
+  }
+  #skills {
+    height: 100vh;
+  }
+  .list {
+    margin: 5px;
   }
 }
 
