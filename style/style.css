@@ -110,7 +110,7 @@ p {
   align-items: center;
   width: 100%;
   text-align: center;
-  height: 40vh;
+  height: 45vh;
   transition: all 0.25s ease-in-out;
 }
 .card-items h3 {
@@ -229,9 +229,7 @@ nav {
 .fixed-nav .links a:hover {
   color: hsla(182, 63%, 54%);
 }
-/* .fixed-nav .links-container {
-    height: auto !important;
-  } */
+
 .nav-header {
   display: flex;
   align-items: center;
@@ -453,7 +451,7 @@ header {
   color: hsla(182, 63%, 54%);
 }
 #about {
-  height: 90vh;
+  height: 95vh;
 }
 #skills {
   background: #fff;
@@ -584,6 +582,9 @@ footer p {
   }
   #skills {
     height: 100vh;
+  }
+  .card-items {
+    height: 40vh;
   }
   .list {
     margin: 5px;
