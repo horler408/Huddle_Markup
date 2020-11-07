@@ -97,7 +97,7 @@ p {
 .card-items {
   border: 10px;
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
-  margin: 10px;
+  margin: 15px;
   padding: 5px 10px;
   flex-direction: column;
   justify-content: space-around;
@@ -105,7 +105,7 @@ p {
   align-items: center;
   width: 100%;
   text-align: center;
-  height: 45vh;
+  height: 50vh;
   transition: all 0.25s ease-in-out;
 }
 .card-items h3 {
@@ -113,6 +113,9 @@ p {
 }
 .list {
   font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  line-height: 1.5;
   margin: 2px;
 }
 
@@ -581,13 +584,16 @@ footer p {
     height: 80vh;
   }
   #skills {
+    padding: 10px;
     height: 100vh;
   }
   .card-items {
-    height: 40vh;
+    height: 60vh;
+    margin: 35px 15px;
   }
   .list {
-    margin: 5px;
+    margin: 10px;
+    line-height: 1.5;
   }
 }
 
