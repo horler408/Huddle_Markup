@@ -19,6 +19,7 @@ html {
   --ff-secondary: "Source Code Pro", monospace;
   --shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.5),
     0.125em 0.125em 0.25em rgba(0, 0, 0, 0.7);
+  --shadow-mild: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -96,7 +97,7 @@ p {
 
 .card-items {
   border: 10px;
-  box-shadow: 0px 5px 20px rgb(71, 71, 71);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
   margin: 15px;
   padding: 5px 10px;
   flex-direction: column;
@@ -320,8 +321,6 @@ nav {
 header {
   min-height: 100vh;
   background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7));
-  /* background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%); */
-  /* background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%); */
 }
 .banner {
   min-height: 100vh;
